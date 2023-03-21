@@ -1,25 +1,25 @@
 import './App.css';
 import {BrowserRouter as Router,Route,Routes} from "react-router-dom"
 
-import Login from "./components/admin/Login";
-import Signup from "./components/users/Signup";
-import UserLogin from "./components/users/UserLogin";
-import Footer from "./components/layout/Footer";
+import Login from './components/admin/Login';
+import Nav from './components/utility/Nav';
+import Home from './components/user/Home';
 
-import "./styles/login.scss";
-import "./styles/signup.scss";
-import "./styles/userlogin.scss";
-import "./styles/footer.scss";
 function App() {
   return (
+    <div className='App'>
     <Router>
+    <Nav/>
       <Routes>
-        <Route path="/admin" element={<Login/>}/>
-        <Route path="/signup" element={<Signup/>}/>
-        <Route path="/userlogin" element={<UserLogin/>}/>
+        
+        <Route path="/" element={<Home/>}/>
+        
+        
+        
       </Routes>
-      <Footer/>
+
     </Router>
+    </div>
   );
 }
 

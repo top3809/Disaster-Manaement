@@ -1,6 +1,10 @@
+// QUe --> what is the difference between js and jsx
+// --> vscode khud b khud detect kar lega , if we use jsx ... or agar hm js use karnege to hme batna padega vscode ko ki hm react use kar rhe !!
+//prince kumar
 import React from 'react'
 import {motion} from "framer-motion";
-
+// import Founder from "./Founder";
+// import Menu from "./Menu";
 const Login= () => {
 
   const options ={
@@ -11,32 +15,37 @@ const Login= () => {
     whileInView:{
       x:0,
       opacity:1,
-    }}
+    }
+  }
   return (
-     
-    <div className='login-container'>
-    <div className='login-left'>
-        <form className="login">
-        <motion.h2 {...options}>Welcome Admin</motion.h2>
-        <motion.p {...options}
-          transition={{
-            delay:.2
-          }}
-        style={{fontSize:"25px"}}>Login here</motion.p>
-        <input type="text" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <span style={{display:"flex", justifyContent:"start",alignItems:"center"}}><input type="checkbox"/>Remember me  <a style={{marginLeft:"60px"}} href="#">Forgot password</a></span>
-        <input type="submit" value="Log In" />
-          {/* <div class="links">
-        <p>Don't have an account?</p> <a href="/signup">Create an account</a>
-          </div> */}
-        </form>
-      </div>
-      <div className="login-right">
-      hello
-      </div>  
-    </div>
-  
+    <>
+      <section className='home'>
+        <div className='div'>
+        <motion.h1 {...options}>Sample Name</motion.h1>   
+        <motion.p {...options} 
+        transition={{
+          delay:0.2,
+        }} >some paragraph</motion.p>
+        </div>
+        <motion.a 
+        initial={{
+          y:"-100%",
+          opacity:0,
+        }}
+        whileInView={{
+          y:0,
+          opacity:1, 
+        }}
+        transition={{
+          delay:0.4,
+        }}
+        href='#menu'>
+            Explore Menu
+        </motion.a>
+    </section>
+    {/* <Founder/>
+    <Menu/> */}
+    </>
   )
 }
 
