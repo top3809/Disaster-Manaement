@@ -13,10 +13,10 @@ const Login= () => {
       opacity:1,
     }}
   return (
-    <>  
-    <section className='login-container'>
-    <div>
-        <form class="login">
+     
+    <div className='login-container'>
+    <div className='login-left'>
+        <form className="login">
         <motion.h2 {...options}>Welcome Admin</motion.h2>
         <motion.p {...options}
           transition={{
@@ -27,15 +27,16 @@ const Login= () => {
         <input type="password" placeholder="Password" />
         <span style={{display:"flex", justifyContent:"start",alignItems:"center"}}><input type="checkbox"/>Remember me  <a style={{marginLeft:"60px"}} href="#">Forgot password</a></span>
         <input type="submit" value="Log In" />
-          <div class="links">
+          {/* <div class="links">
         <p>Don't have an account?</p> <a href="/signup">Create an account</a>
-          </div>
+          </div> */}
         </form>
       </div>
       <div className="login-right">
+      hello
       </div>  
-    </section>
-    </>
+    </div>
+  
   )
 }
 

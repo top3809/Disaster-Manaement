@@ -15,8 +15,8 @@ const Signup= () => {
   return (
     <>  
     <section className='signup-container'>
-    <div>
-        <form class="signup">
+    <div className='signup-left'>
+        <form className="signup">
         <motion.h2 {...options}>Sign Up</motion.h2>
         <motion.p {...options}
           transition={{
@@ -31,7 +31,7 @@ const Signup= () => {
         <span style={{display:"flex", justifyContent:"start",alignItems:"center"}}><input type="checkbox"/>Remember me  <a style={{marginLeft:"60px"}} href="#">Forgot password</a></span>
         <input type="submit" value="Create account" />
           <div class="links">
-        <p>Already have an account?</p> <a href="/admin">Log in</a>
+        <p>Already have an account?</p> <a href="/userlogin ">Log in</a>
           </div>
         </form>
       </div>
