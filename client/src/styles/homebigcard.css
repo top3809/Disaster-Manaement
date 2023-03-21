@@ -1,0 +1,50 @@
+.hbc-container{
+    width: 96vw;
+    margin: 0px auto;
+    
+    padding: 20px;
+    gap: 20px;
+    
+    
+}
+
+.hbc-data{
+    flex: 1;
+    margin-left: 2vw;
+    position: relative;
+}
+
+
+.hbc-data p{
+    width: 70%;
+    margin: 10px 0px;
+    min-width: 300px;
+    font-size: 1.2rem;
+
+}
+
+
+/* .hbc-data::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 100%;
+    background-color: var(--col1);
+    width: 3px;
+    height: 100%;
+    
+} */
+
+.hbc-img{
+    flex: 1;
+    
+}
+
+
+.hbc-img img{
+    margin-left: 10% ;
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+}
+

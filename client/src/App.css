@@ -1,5 +1,16 @@
+:root{
+ 
+  --col1: #065ad8;
+  --col2: #54B435;
+  
+}
+
+*{
+  font-family: 'Raleway' ,sans-serif;
+}
+
 .App {
-  text-align: center;
+    
 }
 
 .App-logo {
