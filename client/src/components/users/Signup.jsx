@@ -1,12 +1,67 @@
-import React from 'react'
-import {motion} from "framer-motion";
+import React, { useState, useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion";
+import '../../styles/signup.scss'
+import { AuthContext } from '../../context/AuthContext';
+import { Alert } from '@mui/material';
 
-const Signup= () => {
 
-  const options ={
-    initial:{
-      x:"-100%",
-      opacity:0,
+const Signup = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [password2, confirmPassword] = useState('');
+  const navigate = useNavigate();
+  const { signup, googlesignin } = useContext(AuthContext);
+
+
+
+
+  const handleGoogle = async (e) => {
+    e.preventDefault();
+    
+    try {
+      let userObj = await googlesignin();
+      let uid = userObj.user.uid;
+      console.log('this is user obj')
+      console.log(userObj);
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+
+      setTimeout(() => {
+        setLoading(false);
+        setError('')
+      }, 3000)
+      return;
+    }
+  }
+
+  const handlePhone = async (e) => {
+    e.preventDefault();
+    
+    try {
+
+      
+      setError('success');
+
+    } catch (err) {
+      setError(err.message);
+
+      setTimeout(() => {
+        setLoading(false);
+        setError('')
+      }, 3000)
+      return;
+    }
+  }
+
+  const options = {
+    initial: {
+      x: "-100%",
+      opacity: 0,
     },
     whileInView:{
       x:0,
