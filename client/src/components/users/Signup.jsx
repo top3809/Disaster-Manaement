@@ -23,11 +23,11 @@ const Signup = () => {
     e.preventDefault();
     
     try {
-
       let userObj = await googlesignin();
       let uid = userObj.user.uid;
+      console.log('this is user obj')
+      console.log(userObj);
       navigate("/");
-
     } catch (err) {
       setError(err.message);
 
