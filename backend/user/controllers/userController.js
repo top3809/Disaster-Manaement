@@ -1,6 +1,7 @@
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const ErrorHander = require("../utils/errorhander");
 const User=require("../models/userModel.js");
+const Event=require("../models/eventModel.js");
 const sendToken=require("../utils/jwtToken.js");
 
 
@@ -61,4 +62,47 @@ exports.logout=catchAsyncErrors(async(req,res,next)=>{
         success:true,
         message:"Logged Out",
     })
+});
+
+
+// Create new Event 
+exports.createEvent=catchAsyncErrors(async(req,res,next)=>{
+    const {
+        location,
+        subject,
+        radius,
+        type,
+        discrption,
+        images,
+    }= req.body;
+
+    let cordinate={
+        x:2,
+        y:4
+    };
+    
+    // var url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + location ;
+    // fetch(url)
+    //     .then(response => response.json())
+    //     .then(data => addressArr = data)
+    //     .then(show => showAddress())
+    //     .catch(err => console.log(err))    
+
+    const event=await Event.create({
+        location,
+        subject,
+        cordinate,
+        radius,
+        type,
+        discrption,
+        images,
+        createdAt:Date.now(),
+        user:req.user._id,
+    })
+
+    res.status(201).json({
+        success:true,
+        event
+    })
+
 });
