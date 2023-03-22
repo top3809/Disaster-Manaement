@@ -1,7 +1,7 @@
 const express=require('express');
 const {adminmodel}=require('../../models/admin.model');
 const jwt=require('jsonwebtoken')
-const bcrypt=require('bcrypt');
+const bcrypt=require('bcryptjs');
 require('dotenv').config('../../')
 const {validate_schema}=require('../helper/validate.schema')
 async function loginadmin(req,res){
@@ -20,7 +20,7 @@ async function loginadmin(req,res){
                     flag:true
                 }) 
             }
-            else{
+            else{ 
                 return res.status(404).json({
                     message:'Wrong password',
                     flag:false
