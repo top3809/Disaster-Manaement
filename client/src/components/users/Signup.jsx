@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import '../../styles/signup.scss'
 import { AuthContext } from '../../context/AuthContext';
 import { Alert } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import googleIcon from '../../assets/icons/google.svg'
 
 
 const Signup = () => {
@@ -78,7 +80,10 @@ const Signup = () => {
             delay:.2
           }}
         style={{fontSize:"20px"}}>Select Method to login :</motion.p>
-        <span className="google"><button type="button">Google</button> <button type="button">Mobile Number</button></span>
+        <IconButton id="googlebtn" onClick={handleGoogle} aria-label="delete" size="small" fullWidth={true}>
+              <img id="googleIcon" src={googleIcon} alt="" /> Sign up with google
+            </IconButton>
+            <hr />
         <input type="text" placeholder='name'/>
         <input type="text" placeholder="Email" />
         <input type="password" placeholder="Password" />
