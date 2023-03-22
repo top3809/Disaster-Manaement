@@ -1,6 +1,5 @@
 import React from 'react'
 import {AiFillInstagram,AiFillYoutube,AiFillGithub} from "react-icons/ai"
-import '../../styles/footer.scss'
 
 const Footer = () => {
   return (
