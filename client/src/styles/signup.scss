@@ -36,7 +36,6 @@ body {
   background-color:white;
 }
 
-
   .signup input {
     width: 100%;
     display: block;
@@ -62,22 +61,6 @@ body {
   transition: 0.2s;
   margin: 20px 0px;
   border-radius: 8px;
-}
-
-.signup #submit{
-  width: 100%;
-
-    padding: 14px 12px;
-    font-size: 16px;
-    font-family: Raleway, sans-serif;
-  border: none;
-  background:rgb(28, 28, 193);
-  color: white;
-  font-weight: bold;  
-  transition: 0.2s;
-  margin: 20px 0px;
-  border-radius: 8px;
-  cursor: pointer;
 }
 
   .signup h2 {
