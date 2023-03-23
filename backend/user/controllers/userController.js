@@ -3,7 +3,7 @@ const ErrorHander = require("../utils/errorhander");
 const User=require("../models/userModel.js");
 const Event=require("../models/eventModel.js");
 const sendToken=require("../utils/jwtToken.js");
-
+const axios = require("axios");
 
 
 
@@ -77,16 +77,31 @@ exports.createEvent=catchAsyncErrors(async(req,res,next)=>{
     }= req.body;
 
     let cordinate={
-        x:2,
-        y:4
+        x:0,
+        y:0
     };
-    
-    // var url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + location ;
-    // fetch(url)
-    //     .then(response => response.json())
-    //     .then(data => addressArr = data)
-    //     .then(show => showAddress())
-    //     .catch(err => console.log(err))    
+
+    // google map location find
+
+    const options = {
+    method: 'GET',
+    url: 'https://geocoding-by-api-ninjas.p.rapidapi.com/v1/geocoding',
+    params: {city: location},
+    headers: {
+        'X-RapidAPI-Key': 'ce90579398msh557b7208b6385dcp1d9c10jsn369f8d27807e',
+        'X-RapidAPI-Host': 'geocoding-by-api-ninjas.p.rapidapi.com'
+    }
+    };
+
+    await axios.request(options).then(function (response) {
+        let cordinate1={
+            x:response.data[0].latitude,
+            y:response.data[0].longitude
+        }
+        cordinate=cordinate1;
+    }).catch(function (error) {
+        return next(new ErrorHander("Can not get cordinate form adrdress"));
+    });
 
     const event=await Event.create({
         location,

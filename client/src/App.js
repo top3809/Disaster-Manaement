@@ -11,6 +11,13 @@ import { AuthProvider } from './context/AuthContext';
 import AlertsForm from './components/user/AlertsForm';
 import DonationForm from './components/user/DonationForm';
 
+import Login from "./components/admin/Login";
+import Signup from "./components/users/Signup";
+import Maps from "./components/utility/Maps";
+
+import "./styles/login.scss";
+import "./styles/signup.scss";
+import "./styles/maps.scss";
 
 function App() {
   return (
@@ -25,6 +32,7 @@ function App() {
             <Route path="/usersignup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/alertsform" element={<AlertsForm/>} />
+            <Route path="/maps" element={<Maps/>}/>
             <Route path="/donationform" element={<DonationForm/>} />
             
           </Routes>
