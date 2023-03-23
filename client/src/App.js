@@ -1,20 +1,46 @@
 import './App.css';
-import {BrowserRouter as Router,Route,Routes} from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+
+import Login from './components/admin/Login';
+import Nav from './components/utility/Nav';
+import Home from './components/user/Home';
+import Footer from './components/layout/Footer'
+import UserLogin from './components/users/UserLogin';
+import Signup from './components/users/Signup';
+import { AuthProvider } from './context/AuthContext';
+import AlertsForm from './components/user/AlertsForm';
+import DonationForm from './components/user/DonationForm';
 
 import Login from "./components/admin/Login";
 import Signup from "./components/users/Signup";
+import Maps from "./components/utility/Maps";
+
 import "./styles/login.scss";
-import "./styles/signup.scss"
+import "./styles/signup.scss";
+import "./styles/maps.scss";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/admin" element={<Login/>}/>
-        <Route path="/signup" element={<Signup/>}/>
-      </Routes>
+    <div className='App'>
+      <Router>
+        <AuthProvider>
+          <Nav />
+          <Routes>
 
-    </Router>
+            <Route path="/" element={<Home />} />
+            <Route path="/userlogin" element={<UserLogin />} />
+            <Route path="/usersignup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/alertsform" element={<AlertsForm/>} />
+            <Route path="/maps" element={<Maps/>}/>
+            <Route path="/donationform" element={<DonationForm/>} />
+            
+          </Routes>
+        </AuthProvider>
+      </Router>
+      <Footer></Footer>
+
+    </div>
   );
 }
 
