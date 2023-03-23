@@ -13,9 +13,13 @@ import Img4 from '../../assets/homeslider/img4.png';
 
 export default function Homeslider() {
   var settings = {
+    accessibility:true,
     dots: true,
     infinite: true,
     speed: 500,
+    swipe:true,
+    arrow:true,
+    swipeToSlide:true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay:true,
@@ -33,8 +37,8 @@ export default function Homeslider() {
     <Slider {...settings}>
       {
         imgArr.map((i)=>(
-          <div className="each-slider">
-           <h3> <img src={i} alt="" /></h3>
+          <div id="each-slider">
+           <img src={i} alt="" />
           </div>
         ))
       }
