@@ -8,7 +8,8 @@ import Footer from './components/layout/Footer'
 import UserLogin from './components/users/UserLogin';
 import Signup from './components/users/Signup';
 import { AuthProvider } from './context/AuthContext';
-import Alerts from './components/user/Alerts';
+import AlertsForm from './components/user/AlertsForm';
+import DonationForm from './components/user/DonationForm';
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
             <Route path="/userlogin" element={<UserLogin />} />
             <Route path="/usersignup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/alerts" element={<Alerts/>} />
+            <Route path="/alertsform" element={<AlertsForm/>} />
+            <Route path="/donationform" element={<DonationForm/>} />
             
           </Routes>
         </AuthProvider>

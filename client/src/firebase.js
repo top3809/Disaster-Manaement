@@ -4,7 +4,6 @@ import { getAuth} from 'firebase/auth'
 import 'firebase/compat/auth'
 import env from "react-dotenv";
 
-console.log(env.apiKey)
 
 const firebaseConfig = {
     apiKey: env.apiKey,
