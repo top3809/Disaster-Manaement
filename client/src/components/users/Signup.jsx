@@ -12,6 +12,7 @@ const Signup= () => {
       x:0,
       opacity:1,
     }}
+  
   return (
     <>  
     <section className='signup-container'>
