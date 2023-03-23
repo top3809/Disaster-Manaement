@@ -8,6 +8,8 @@ import Footer from './components/layout/Footer'
 import UserLogin from './components/users/UserLogin';
 import Signup from './components/users/Signup';
 import { AuthProvider } from './context/AuthContext';
+import Alerts from './components/user/Alerts';
+
 
 function App() {
   return (
@@ -20,8 +22,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/userlogin" element={<UserLogin />} />
             <Route path="/usersignup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/alerts" element={<Alerts/>} />
             
-
           </Routes>
         </AuthProvider>
       </Router>

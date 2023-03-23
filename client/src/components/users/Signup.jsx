@@ -1,12 +1,69 @@
-import React from 'react'
-import {motion} from "framer-motion";
+import React, { useState, useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion";
+import '../../styles/signup.scss'
+import { AuthContext } from '../../context/AuthContext';
+import { Alert } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import googleIcon from '../../assets/icons/google.svg'
+import Bg from '../../assets/login_pic.webp'
 
-const Signup= () => {
+const Signup = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [password2, confirmPassword] = useState('');
+  const navigate = useNavigate();
+  const { signup, googlesignin } = useContext(AuthContext);
 
-  const options ={
-    initial:{
-      x:"-100%",
-      opacity:0,
+
+
+
+  const handleGoogle = async (e) => {
+    e.preventDefault();
+    
+    try {
+      let userObj = await googlesignin();
+      let uid = userObj.user.uid;
+      console.log('this is user obj')
+      console.log(userObj);
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+
+      setTimeout(() => {
+        setLoading(false);
+        setError('')
+      }, 3000)
+      return;
+    }
+  }
+
+  const handlePhone = async (e) => {
+    e.preventDefault();
+    
+    try {
+
+      
+      setError('success');
+
+    } catch (err) {
+      setError(err.message);
+
+      setTimeout(() => {
+        setLoading(false);
+        setError('')
+      }, 3000)
+      return;
+    }
+  }
+
+  const options = {
+    initial: {
+      x: "-100%",
+      opacity: 0,
     },
     whileInView:{
       x:0,
@@ -23,7 +80,10 @@ const Signup= () => {
             delay:.2
           }}
         style={{fontSize:"20px"}}>Select Method to login :</motion.p>
-        <span className="google"><button type="button">Google</button> <button type="button">Mobile Number</button></span>
+        <IconButton id="googlebtn" onClick={handleGoogle} aria-label="delete" size="small" fullWidth={true}>
+              <img id="googleIcon" src={googleIcon} alt="" /> Sign up with google
+            </IconButton>
+            <hr />
         <input type="text" placeholder='name'/>
         <input type="text" placeholder="Email" />
         <input type="password" placeholder="Password" />
@@ -36,6 +96,7 @@ const Signup= () => {
         </form>
       </div>
       <div className="signup-right">
+      <img src={Bg} alt="" />
       </div>  
     </section>
     </>
