@@ -7,10 +7,11 @@ import Img from '../../assets/sideimages/donateform.avif'
 import Button from '@mui/material/Button';
 import UploadDocs from '../utility/UploadDocs';
 
-
 function DonationForm() {
 
-    const [subject,setSubject] = useState('');
+    const [accNumber,setAccNumber] = useState();
+    const [accHolder,setAccHolder] = useState('');
+    const [ifsc,setIfsc] = useState('');
     const [type,setType] = useState('');
     const [location,setLocation] = useState('');
     const [area,setArea] = useState('');
@@ -24,21 +25,25 @@ function DonationForm() {
     <div className='donation-container'>
             <div className='donation-left'>
             <div className='formbox'>
-                <h2>Please Fill the Alert Information</h2>
+                <h2>Please Fill Raise Fund Form</h2>
+                <div>                  
+                    <h5>Account Number</h5>
+                    <input type="number" className='inputbox' />
+                </div>
                 <div>
-                    <h5>Subject</h5>
+                <h5>Name of Account Holder</h5>
                     <TextField size='small' id="outlined-basic" value={subject} onChange={(e)=>setSubject(e.target.value)} label="" variant="outlined" />
                 </div>
                 <div>
-                    <h5>Type of Disaster</h5>
-                    <SelectComp value={type} onChange={(e)=>setType(e.target.value)} id="outlined-basic"></SelectComp>
+                <h5>IFSC Code</h5>
+                    <TextField size='small' style={{textTransform:'upperCase'}} id="outlined-IFSC" value={subject} onChange={(e)=>setSubject(e.target.value)} label="" variant="outlined" />
                 </div>
                 <div>
-                    <h5>Location (center point) </h5>
-                    <TextField size='small' id="outlined-basic" value={location} onChange={(e)=>setLocation(e.target.value)} label="" variant="outlined" />
+                <h5>Amount Required (in Rs)</h5>
+                    <input type="number" className='inputbox' />
                 </div>
                 <div>
-                    <h5>Area Radius (in kilometers)</h5>
+                    <h5>Name of Victim / Organization</h5>
                     <TextField size='small' id="outlined-basic" value={area} onChange={(e)=>setArea(e.target.value)} label="" variant="outlined" required />
                 </div>
                 <div>
