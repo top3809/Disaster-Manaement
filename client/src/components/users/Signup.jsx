@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { Alert } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import googleIcon from '../../assets/icons/google.svg'
-
+import Bg from '../../assets/login_pic.webp'
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -96,6 +96,7 @@ const Signup = () => {
         </form>
       </div>
       <div className="signup-right">
+      <img src={Bg} alt="" />
       </div>  
     </section>
     </>

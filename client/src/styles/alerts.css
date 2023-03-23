@@ -1,6 +1,5 @@
 .alerts-container{
-    height: 90vh;
-    width: 100%;
+    height: 96vh;
     display: flex;
     justify-content: center;
     width: 96vw;
@@ -11,7 +10,7 @@
     /* border: 1px solid red; */
     margin-top: 2vh;
    flex: 2;
-   padding: 30px;
+   
     
 }
 .formbox{
@@ -25,19 +24,20 @@
 
 #outlined-basic{
     font-family: 'Raleway';
-    width: 300px;
+    width: 320px;
 }
 
 .alerts-right{
     flex:3;
-    border: 1px solid green;
+ 
 }
 
 
 .alerts-right img{
     width: 100%;
     height: 90vh;
-    border: 1px solid red;
+    margin: 0px 4px;
+
 }
 
 @media screen and (max-width: 821px) {
