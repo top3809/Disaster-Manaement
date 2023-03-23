@@ -14,22 +14,42 @@
 }
 .signup-right{
   flex:1;
-  background-image: url("../assets/login_pic.webp");
+  position: relative;
   height: 100vh;
   width:100%;
-  background-repeat: no-repeat;
-  background-size: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-x:hidden;
-  background-color: blue;
+  background-color: var(--col1);
 }
+
+.signup-right img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .signup{
   // padding:15% 20%;
   margin:15% 20%;
   background-color:white;
 }
+
+
+.signup #googlebtn{
+  color:black;
+  border-radius: 4px;
+  border: 1px solid #969696;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.signup #googleIcon{
+  height: 30px;
+}
+
 
   .signup input {
     width: 100%;
@@ -44,18 +64,18 @@
 
 .signup input[type=text],
 .signup input[type=password] {
-  border: 1px solid #c0c0c0;
+  border: 1px solid #969696;
   transition: .2s;
 }
 
 .signup input[type=submit] {
   border: none;
-  background:rgb(28, 28, 193);
+  background:var(--col1);
   color: white;
   font-weight: bold;  
   transition: 0.2s;
   margin: 20px 0px;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
   .signup h2 {
@@ -72,7 +92,7 @@
   display: table;
   width: 100%;  
   box-sizing: border-box;
-  border-top: 1px solid #c0c0c0;
+  border-top: 1px solid #969696;
   margin-bottom: 10px;
 }
 
@@ -116,4 +136,12 @@
 
 .google{
     padding-left:20px;
+}
+
+@media screen and (max-width: 821px){
+
+  .signup-right{
+    display: none;
+  }
+
 }

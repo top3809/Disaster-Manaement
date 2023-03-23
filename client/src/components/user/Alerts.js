@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import Textarea from '@mui/joy/Textarea';
 import Img from '../../assets/others/sunami.jpg'
 import Button from '@mui/material/Button';
+import UploadDocs from '../utility/UploadDocs';
 
 function Alerts() {
     return (
@@ -31,7 +32,7 @@ function Alerts() {
                 <div>
                     <h5>Description</h5>
                     <Textarea 
-                    sx={{ width: 328 }}
+                    sx={{ width: 348 }}
                     id='outlined-basic'
                         placeholder=""
                     
@@ -42,10 +43,11 @@ function Alerts() {
                 <div>
                     <h5>Add Supporting Documents</h5>
                     <TextField size='small' id="outlined-basic" label="" variant="outlined" />
+                    <UploadDocs></UploadDocs>
                 </div>
                 <div>
                 <h5></h5>
-                <Button variant="contained" sx={{width:328,backgroundColor:'var(--col1)'}}>Submit</Button>
+                <Button variant="contained" sx={{width:348,backgroundColor:'var(--col1)'}}>Submit</Button>
                 </div>
                 </div>
             </div>

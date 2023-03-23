@@ -13,7 +13,7 @@ export default function SelectComp() {
 
   return (
     <div>
-      <FormControl sx={{ width: 328 }} size="small">
+      <FormControl sx={{ width: 348 }} size="small">
         <InputLabel id="demo-simple-select-autowidth-label"></InputLabel>
         <Select
           labelId="demo-simple-select-autowidth-label"
