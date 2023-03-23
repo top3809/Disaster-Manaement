@@ -4,7 +4,7 @@ const cookieParser=require("cookie-parser");
 const { createadmin } = require('./admin/routes/createadmin.route');
 const { loginroute } = require('./admin/routes/login.route');
 const user  = require('./user/routes/user.js');
-
+const errorMiddleware=require("./user/middleware/error.js");
 
 const {mains}=require('./admin/routes/main')
 const db=require('./db/db');
@@ -16,7 +16,8 @@ app.use('/admin',createadmin)
 
 app.use('/user',user)
 
-
+//Middleware for Error 
+app.use(errorMiddleware);
 
 
 let PORT=process.env.PORT||5000

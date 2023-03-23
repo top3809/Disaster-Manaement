@@ -12,6 +12,12 @@ const userSchema=new mongoose.Schema({
         maxLength:[30,"Name cannot exceed 30 characters"],
         minLength:[4,"Name should have more than 4 characters"]
     },
+    mobile:{
+        type:String,
+        required:[true,"Please Enter Your Mobile number"],
+        maxLength:[10,"mobile number cannot exceed 10 digits"],
+        minLength:[10,"mobile number is lessthan 10 digits"]
+    },
     email:{
         type:String,
         required:[true,"Please Enter Your Email"],
@@ -34,7 +40,13 @@ const userSchema=new mongoose.Schema({
     },
 });
 
-
+userSchema.pre("save",async function(next){
+    if(!this.isModified("password")){
+        next();
+    }
+    this.password=await bcrypt.hash(this.password,10);
+    next();
+})
 
 //JWT TOKEN
 userSchema.methods.getJWTToken=function() {
@@ -48,7 +60,7 @@ userSchema.methods.comparePassword=async function(enteredPassword){
 
     return await bcrypt.compare(enteredPassword,this.password);
 }
- 
+  
 
 
 module.exports =mongoose.model("User",userSchema);
