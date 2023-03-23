@@ -1,5 +1,6 @@
 import React from 'react'
 import {motion} from "framer-motion";
+import '../../styles/login.scss'
 
 const Login= () => {
 
@@ -33,7 +34,6 @@ const Login= () => {
         </form>
       </div>
       <div className="login-right">
-      hello
       </div>  
     </div>
   
