@@ -9,10 +9,9 @@ import UserLogin from './components/users/UserLogin';
 import Signup from './components/users/Signup';
 import { AuthProvider } from './context/AuthContext';
 import AlertsForm from './components/user/AlertsForm';
-import DonationForm from './components/user/DonationForm';
-
-import Login from "./components/admin/Login";
-import Signup from "./components/users/Signup";
+import DonationForm from './components/user/DonationForm'
+import Donation from './components/home/Donation'
+import VolunteerForm from './components/user/VolunteerForm'
 import Maps from "./components/utility/Maps";
 
 import "./styles/login.scss";
@@ -34,6 +33,8 @@ function App() {
             <Route path="/alertsform" element={<AlertsForm/>} />
             <Route path="/maps" element={<Maps/>}/>
             <Route path="/donationform" element={<DonationForm/>} />
+            <Route path="/volunteerform" element={<VolunteerForm/>} />
+            <Route path="/donation" element={<Donation/>} />
             
           </Routes>
         </AuthProvider>

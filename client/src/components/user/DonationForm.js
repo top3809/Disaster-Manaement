@@ -12,9 +12,8 @@ function DonationForm() {
     const [accNumber,setAccNumber] = useState();
     const [accHolder,setAccHolder] = useState('');
     const [ifsc,setIfsc] = useState('');
-    const [type,setType] = useState('');
-    const [location,setLocation] = useState('');
-    const [area,setArea] = useState('');
+    const [amount,setAmount] = useState('');
+    const [vicName,setVicName] = useState('');
     const [desc,setDesc] = useState('');
 
     const handleClick = ()=>{
@@ -28,23 +27,23 @@ function DonationForm() {
                 <h2>Please Fill Raise Fund Form</h2>
                 <div>                  
                     <h5>Account Number</h5>
-                    <input type="number" className='inputbox' />
+                    <input type="number" value={accNumber} onChange={(e)=>setAccNumber(e.target.value)} className='inputbox' />
                 </div>
                 <div>
                 <h5>Name of Account Holder</h5>
-                    <TextField size='small' id="outlined-basic" value={subject} onChange={(e)=>setSubject(e.target.value)} label="" variant="outlined" />
+                    <TextField size='small' id="outlined-basic" value={accHolder} onChange={(e)=>setAccHolder(e.target.value)} label="" variant="outlined" />
                 </div>
                 <div>
                 <h5>IFSC Code</h5>
-                    <TextField size='small' style={{textTransform:'upperCase'}} id="outlined-IFSC" value={subject} onChange={(e)=>setSubject(e.target.value)} label="" variant="outlined" />
+                    <TextField size='small' style={{textTransform:'upperCase'}} id="outlined-IFSC" value={ifsc} onChange={(e)=>setIfsc(e.target.value)} label="" variant="outlined" />
                 </div>
                 <div>
                 <h5>Amount Required (in Rs)</h5>
-                    <input type="number" className='inputbox' />
+                    <input type="number" value={amount} onChange={(e)=>setAmount} className='inputbox' />
                 </div>
                 <div>
                     <h5>Name of Victim / Organization</h5>
-                    <TextField size='small' id="outlined-basic" value={area} onChange={(e)=>setArea(e.target.value)} label="" variant="outlined" required />
+                    <TextField size='small' id="outlined-basic" value={vicName} onChange={(e)=>setVicName(e.target.value)} label="" variant="outlined" required />
                 </div>
                 <div>
                     <h5>Description</h5>

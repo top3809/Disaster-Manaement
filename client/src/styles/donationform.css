@@ -78,6 +78,16 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media screen and (max-width: 821px) {
     
+
+    .donation-container{
+        justify-content: center;
+    }
+
+    .donation-left{
+        width: auto;
+    }
+  
+
     .donation-right{
         display: none;
     }

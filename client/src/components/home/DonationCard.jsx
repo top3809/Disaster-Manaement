@@ -20,7 +20,6 @@ const DonationCard = ({itemNum,burgerSrc,price,title,handler,delay=0}) => {
         <div>Item {itemNum}</div>
         <main>
             <img src={burgerSrc} alt={itemNum}></img>
-            {/* <h5>₹{price}</h5> */}
             <p>{title}</p>
             <button style={{width:"22vh"}}>Donate Now</button>
         </main>

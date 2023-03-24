@@ -16,7 +16,7 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
   const [password2, confirmPassword] = useState('');
   const navigate = useNavigate();
-  const { signup, googlesignin } = useContext(AuthContext);
+  const { googlesignin } = useContext(AuthContext);
 
 
 

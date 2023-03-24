@@ -4,7 +4,7 @@ import burger1 from "../../assets/burger1.jpg";
 import burger2 from "../../assets/img1.jpg";
 import burger3 from "../../assets/maps.jpg";
 import Fab from '@mui/material/Fab';
-
+import '../../styles/donation.scss'
 
 const Donation = () => {
   const addToCartHandler = (itemNum) => {};
